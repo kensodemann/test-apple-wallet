@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
+import { AppleWalletProvider } from '../../providers/apple-wallet/apple-wallet';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  constructor(private platform: Platform, private appleWallet: AppleWalletProvider) {}
 
-  constructor(public navCtrl: NavController) {
-
+  async isWalletAvailable() {
+    await this.platform.ready();
+    console.log(window);
+    const res = await this.appleWallet.isAvailable();
+    console.log(res);
   }
-
 }
