@@ -1,0 +1,7 @@
+{
+  "name": "test-apple-wallet",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
